@@ -1,0 +1,12 @@
+Package: iesp
+Title: Utilities for teaching at IESP-UERJ
+Version: 0.0.0.9000
+Authors@R: 
+    person("Fernando", "Meireles", , "fernando.meireles@iesp.uerj.br", role = c("aut", "cre"),
+           comment = c(ORCID = "0000-0002-7027-2058"))
+Description: Functions, templates, and datasets used for teaching Lego 
+    (i.e., the quantitative methods track) at IESP-UERJ.
+License: MIT + file LICENSE
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.2.3
