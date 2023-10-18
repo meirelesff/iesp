@@ -4,14 +4,13 @@
 \alias{glance.rdrobust}
 \title{RDD extensions for glance}
 \usage{
-glance.rdrobust(model, ...)
+\method{glance}{rdrobust}(x, ...)
 }
 \arguments{
-\item{model}{An \code{rdd} object created by the \code{rdrobust} package.}
+\item{x}{An \code{rdd} object created by the \code{rdrobust} package.}
 
 \item{...}{Additional arguments passed to \code{modelsummary()}.}
 }
 \description{
-These functions provide extensions to the \code{modelsummary()} function for
-\code{rdd} objects created by the \code{rdrobust} package.
+Glance methods for \code{rdd} objects created by the \code{rdrobust} package.
 }

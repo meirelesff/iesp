@@ -2,7 +2,7 @@
 #' 
 #' Tidy methods for \code{rdd} objects created by the \code{rdrobust} package.
 #' 
-#' @param model An \code{rdd} object created by the \code{rdrobust} package.
+#' @param x An \code{rdd} object created by the \code{rdrobust} package.
 #' @param ... Additional arguments passed to \code{modelsummary()}.
 #' 
 #' @examples
@@ -15,14 +15,16 @@
 #' glance(mod)
 #' }
 #' 
+#' @importFrom rdrobust rdrobust
+#' @importFrom broom tidy
 #' @export 
 
-tidy.rdrobust <- function(model, ...) {
+tidy.rdrobust <- function(x, ...) {
   res <- data.frame(
-    term = row.names(model$coef)[3],
-    estimate = model$coef[3],
-    std.error = model$se[3],
-    p.value = model$pv[3]
+    term = row.names(x$coef)[3],
+    estimate = x$coef[3],
+    std.error = x$se[3],
+    p.value = x$pv[3]
   )
   row.names(res) <- NULL
   res
@@ -35,12 +37,14 @@ tidy.rdrobust <- function(model, ...) {
 #' 
 #' @inheritParams tidy.rdrobust
 #' 
+#' @importFrom rdrobust rdrobust
+#' @importFrom broom glance
 #' @export 
 
-glance.rdrobust <- function(model, ...) {
+glance.rdrobust <- function(x, ...) {
   res <- data.frame(
-    Janela = round(model$bws[1], 1),
-    N = sum(model$N_h)
+    Janela = round(x$bws[1], 1),
+    N = sum(x$N_h)
   )
   res
 }

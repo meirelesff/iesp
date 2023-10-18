@@ -4,14 +4,24 @@
 \alias{tidy.rdrobust}
 \title{RDD extensions for tidy}
 \usage{
-tidy.rdrobust(model, ...)
+\method{tidy}{rdrobust}(x, ...)
 }
 \arguments{
-\item{model}{An \code{rdd} object created by the \code{rdrobust} package.}
+\item{x}{An \code{rdd} object created by the \code{rdrobust} package.}
 
 \item{...}{Additional arguments passed to \code{modelsummary()}.}
 }
 \description{
-These functions provide extensions to the \code{modelsummary()} function for
-\code{rdd} objects created by the \code{rdrobust} package.
+Tidy methods for \code{rdd} objects created by the \code{rdrobust} package.
+}
+\examples{
+\dontrun{
+x <- runif(100, -10, 10)
+y <- 10 + 2*x + 2*(x>=0) + rnorm(100)
+mod <- rdrobust(y,x)
+
+tidy(mod)
+glance(mod)
+}
+
 }
