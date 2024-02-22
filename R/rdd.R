@@ -47,9 +47,9 @@ glance.rdrobust <- function(x, ...) {
   res <- data.frame(
     Janela = round(x$bws[1], 1),
     N = sum(x$N_h),
-    N_ctrl = x$N_h[1],
-    N_trt = x$N_h[2],
-    Poly = x$p
+    `N (controle)` = x$N_h[1],
+    `N (tratamento)` = x$N_h[2],
+    Polinômio = x$p
   )
   res
 }
