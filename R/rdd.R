@@ -24,7 +24,9 @@ tidy.rdrobust <- function(x, ...) {
     term = row.names(x$coef)[3],
     estimate = x$coef[3],
     std.error = x$se[3],
-    p.value = x$pv[3]
+    p.value = x$pv[3],
+    conf.low  = x$ci[3, 1],
+    conf.high = x$ci[3, 2]
   )
   row.names(res) <- NULL
   res
@@ -44,7 +46,8 @@ tidy.rdrobust <- function(x, ...) {
 glance.rdrobust <- function(x, ...) {
   res <- data.frame(
     Janela = round(x$bws[1], 1),
-    N = sum(x$N_h)
+    N = sum(x$N_h),
+    Poly = x$p
   )
   res
 }
