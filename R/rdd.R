@@ -45,7 +45,7 @@ tidy.rdrobust <- function(x, ...) {
 
 glance.rdrobust <- function(x, ...) {
   res <- data.frame(
-    Janela = round(x$bws[1], 1),
+    Janela = round(x$bws[1], 2),
     N = sum(x$N_h),
     `N (controle)` = x$N_h[1],
     `N (tratamento)` = x$N_h[2],
