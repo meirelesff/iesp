@@ -23,7 +23,7 @@ tidy.rdrobust <- function(x, ...) {
   res <- data.frame(
     term = row.names(x$coef)[1],
     estimate = x$coef[1],
-    std.error = x$se[3],
+    std.error = x$se[1],
     p.value = x$pv[3],
     conf.low  = x$ci[3, 1],
     conf.high = x$ci[3, 2]
