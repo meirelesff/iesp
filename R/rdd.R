@@ -21,8 +21,8 @@
 
 tidy.rdrobust <- function(x, ...) {
   res <- data.frame(
-    term = row.names(x$coef)[3],
-    estimate = x$coef[3],
+    term = row.names(x$coef)[1],
+    estimate = x$coef[1],
     std.error = x$se[3],
     p.value = x$pv[3],
     conf.low  = x$ci[3, 1],
